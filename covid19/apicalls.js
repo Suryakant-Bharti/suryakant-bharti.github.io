@@ -1,5 +1,5 @@
 // All Countries
-        fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=0&resultRecordCount=1000&cacheHint=true" )
+        fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20desc&resultOffset=0&resultRecordCount=1000&cacheHint=true" )
         .then( r => r.json() )
         .then( r => {
             if( r ) {
@@ -24,7 +24,7 @@ data.forEach(function (a) {
         this[key] = { country: a.country, cases: 0, deaths: 0, recovered: 0, active: 0, formattedDate: a.formattedDate};
         grouped.push(this[key]);
     }
-    if(a.formattedDate > this[key].formattedDate) this[key].formattedDate = a.formattedDate;
+    this[key].formattedDate = a.formattedDate;
     this[key].cases += a.cases;
     this[key].deaths += a.deaths;
     this[key].recovered += a.recovered;
@@ -67,7 +67,7 @@ data.forEach(function (a) {
         
 
         // China in Detail
-        fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=0&resultRecordCount=1000&cacheHint=true" )
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=111&resultRecordCount=40&cacheHint=true" )
         .then( r => r.json() )
         .then( r => {
             if( r ) {
@@ -106,7 +106,7 @@ data.forEach(function (a) {
         
         
 		// USA in Detail
-        fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=0&resultRecordCount=1000&cacheHint=true" )
+        fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=704&resultRecordCount=70&cacheHint=true" )
         .then( r => r.json() )
         .then( r => {
             if( r ) {
@@ -122,12 +122,12 @@ data.forEach(function (a) {
                 console.log( data );
 
                 // Max after New York
-                let maxCases = Math.max( ...data.filter( x => x.state !== "New York" ).map( x => x.cases ) );
+                let maxCases = Math.max( ...data.filter( x => x.state !== "Dummy" ).map( x => x.cases ) );
                 console.log( maxCases );
                 data.forEach( (x,i) => {
                     $( "#breakdown-usa tr:last" ).after( `
                       <tr>
-                        <td class="table-${x.state === "New York" ? "secondary" : "default"}">${x.state}</td>
+                        <td class="table-${x.state === "Dummy" ? "secondary" : "default"}">${x.state}</td>
                         <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
                         <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
                         <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
@@ -137,39 +137,471 @@ data.forEach(function (a) {
                 sortTable(1, "breakdown-usa");
             }
         });
-        
-        
-        
-                // China vs Others
-        fetch( `https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/cases_time_v3/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Report_Date_String%20asc&resultOffset=0&resultRecordCount=3000&cacheHint=true` )
+
+
+
+
+         // India in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=250&resultRecordCount=40&cacheHint=true" )
         .then( r => r.json() )
         .then( r => {
             if( r ) {
-                let data = r.features.map( x => x.attributes ).map( x => ({
-                    date: x.Report_Date,
-                    formattedDate: moment( x.Report_Date ).format( "ll" ),
-                    china: x.Mainland_China,
-                    other: x.Other_Locations,
-                    total: x.Total_Confirmed
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "India" || x.Country_Region === "India" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
                 }));
                 console.log( data );
-                $( "#updated" ).text( `(Updated ${data[ data.length - 1 ].formattedDate})` );
-
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
                 data.forEach( (x,i) => {
-                    let prevChina = ( i > 0 ? data[ i - 1 ].china : x.china );
-                    let prevOther = ( i > 0 ? data[ i - 1 ].other : x.other );
-                    let prevTotal = ( i > 0 ? data[ i - 1 ].total : x.total );
-                    if( x.total ) {
-                        $( "#quickview tr:last" ).after( `
-                          <tr>
-                            <th scope="row">${x.formattedDate}</th>
-                            <td class="table-${getLessIsBetterHighlight( ( x.china - prevChina ) / prevChina )}">${x.china} <small>(+${ ( ( x.china - prevChina ) / prevChina * 100 ).toFixed( 2 ) }%)</small></td>
-                            <td class="table-${getLessIsBetterHighlight( ( x.other - prevOther ) / prevOther )}">${x.other} <small>(+${ ( ( x.other - prevOther ) / prevOther * 100 ).toFixed( 2 ) }%)</small></td>
-                            <td class="table-${getLessIsBetterHighlight( ( x.total - prevTotal ) / prevTotal )}">${x.total} <small>(+${ ( ( x.total - prevTotal ) / prevTotal * 100 ).toFixed( 2 ) }%)</small></td>
-                            <td>${x.total - prevTotal}</small></td>
-                          </tr>` );
-                    }
+                    $( "#breakdown-india tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
                 });
+                
+               sortTable(1,"breakdown-india");
+            }
+        });
+
+
+
+         // Japan in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=312&resultRecordCount=60&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Japan" || x.Country_Region === "Japan" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-japan tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-japan");
+            }
+        });
+
+
+
+
+
+
+         // Canada in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=76&resultRecordCount=20&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Canada" || x.Country_Region === "Canada" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-canada tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-canada");
+            }
+        });
+
+
+
+
+
+
+         // Australia in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=8&resultRecordCount=10&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Australia" || x.Country_Region === "Australia" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-australia tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-australia");
+            }
+        });
+
+
+
+
+
+
+         // UK in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=680&resultRecordCount=20&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "United Kingdom" || x.Country_Region === "United Kingdom" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-uk tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-uk");
+            }
+        });
+
+
+
+
+
+
+         // Germany in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=219&resultRecordCount=20&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Germany" || x.Country_Region === "Germany" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-germany tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-germany");
+            }
+        });
+
+
+
+
+
+
+         // France in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=204&resultRecordCount=20&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "France" || x.Country_Region === "France" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-france tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-france");
+            }
+        });
+
+
+
+
+
+
+         // Italy in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=290&resultRecordCount=30&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Italy" || x.Country_Region === "Italy" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-italy tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-italy");
+            }
+        });
+
+
+
+
+
+
+         // Spain in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=596&resultRecordCount=30&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Spain" || x.Country_Region === "Spain" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-spain tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-spain");
+            }
+        });
+
+
+
+
+
+
+         // Russia in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=494&resultRecordCount=90&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Russia" || x.Country_Region === "Russia" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-russia tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-russia");
+            }
+        });
+
+
+
+
+
+
+
+
+         // Brazil in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=41&resultRecordCount=30&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Brazil" || x.Country_Region === "Brazil" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-brazil tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-brazil");
+            }
+        });
+
+
+
+
+
+
+
+
+         // Mexico in Detail
+         fetch( "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/1/query?f=json&where=1%3D1&returnGeometry=false&outFields=*&orderByFields=Country_Region%20asc%2CProvince_State%20asc&resultOffset=387&resultRecordCount=40&cacheHint=true" )
+        .then( r => r.json() )
+        .then( r => {
+            if( r ) {
+                let data = r.features.map( x => x.attributes ).filter( x => x.Country_Region === "Mexico" || x.Country_Region === "Mexico" ).map( x => ({
+                    date: x.Last_Update,
+                    formattedDate: moment( x.Last_Update + 18000000 ).format( "lll" ),
+                    province: x.Province_State || "",
+                    country: x.Country_Region || "",
+                    cases: x.Confirmed || 0,
+                    deaths: x.Deaths || 0,
+                    recovered: x.Recovered || 0,
+                }));
+                console.log( data );
+                
+                // Max after Hubei (Wuhan)
+                let maxCases = Math.max( ...data.filter( x => x.province !== "Dummy" ).map( x => x.cases ) );
+                console.log( maxCases );
+                data.forEach( (x,i) => {
+                    $( "#breakdown-mexico tr:last" ).after( `
+                      <tr>
+                        <td class="table-${x.province === "Dummy" ? "secondary" : "default"}">${x.province}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.cases / maxCases )}">${x.cases}</td>
+                        <td class="table-${getLessIsBetterHighlight( x.deaths / x.cases )}">${x.deaths} <small>(${ ( x.deaths / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td class="table-${getMoreIsBetterHighlight( x.recovered / x.cases )}">${x.recovered} <small>(${ ( x.recovered / x.cases * 100 ).toFixed( 2 ) }%)</small></td>
+                        <td><small>${x.formattedDate}</small></td>
+                      </tr>` );
+                });
+                
+               sortTable(1,"breakdown-mexico");
             }
         });
         

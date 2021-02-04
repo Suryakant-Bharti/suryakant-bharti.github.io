@@ -12,19 +12,42 @@
 		text-align: center;
 	}
 
-	iframe {
+	/*iframe {
 		width:100%; 
 		height:500px;
-	}
+	}*/
 
-    table[id="breakdown"] {
-	}
+    table[id="breakdown"] {  }
 
-	table[id="breakdown-usa"] {
-	}
+	table[id="breakdown-usa"] {  }
+	
+	table[id="breakdown-canada"] {	}
+	
+	table[id="breakdown-australia"] {  }
 
-	table[id="breakdown-china"] {
-	}
+	table[id="breakdown-uk"] {	}
+	
+	table[id="breakdown-germany"] {  }
+	
+	table[id="breakdown-france"] {  }
+
+	table[id="breakdown-italy"] {  }
+	
+	table[id="breakdown-spain"] {  }
+	
+	table[id="breakdown-russia"] {	}
+
+	table[id="breakdown-brazil"] {	}
+	
+	table[id="breakdown-mexico"] {	}
+	
+	table[id="breakdown-india"] {  }
+	
+	table[id="breakdown-china"] {  }
+	
+	table[id="breakdown-japan"] {  }
+	
+
 
 	table[id="totalcasesdatatable"] {
 		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
