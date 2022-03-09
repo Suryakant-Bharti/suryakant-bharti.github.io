@@ -11,11 +11,11 @@
    <style>
       body,h1 {font-family: "Raleway", sans-serif}
       body, html {height: 100%}
-      <!--.bgimg {          // USING VIDEO INSTEAD
-         background-image: url('/assets/nature.jpg'); /* */
-         min-height: 100%;
-         background-position: center;
-         background-size: cover;
+      <--.bgimg {
+         background-image: url('assets/pat1.jpg'); /* */
+         height: 100%;
+         background-repeat: repeat;
+
       }-->
       .w3-lobster {
   font-family: "Lobster", serif;
@@ -59,9 +59,9 @@
       }
       #myVideo {
 	  pointer-events: none;
-          width: auto;
-		  height: 100%;
-		  min-height: 800px;
+		height: 100%;
+		width: auto;
+		min-height:900px;
 		  position: fixed;
 			margin-left: auto;
 			margin-right: auto;
@@ -85,9 +85,13 @@
 
       <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 	  
-
+		<!--use this for diff video for mbile & pc: https://stackoverflow.com/questions/25694350/offering-smaller-versions-of-videos-with-media-query-or-when-mobiles-are-detecte-->
 	     <video autoplay muted loop id="myVideo">
-			  <source src="assets/forestmob.mp4" type="video/mp4">
+		 <source 
+			  media="(min-width: 2650px)" src="assets/forestpctab.mp4" type="video/mp4">
+		   <source 
+			  media="(min-width: 650px)" src="assets/forestmob.mp4" type="video/mp4">
+			  
 			  Your browser does not support HTML5 video.
 		 </video>
 
@@ -96,7 +100,7 @@
             <h1 class="w3-xxlarge w3-center w3-padding-small w3-animate-top">SURYAKANT BHARTI</h1>
          </div>
          <div id="grad4">
-            <h2 class="w3-large w3-lobster w3-center w3-animate-zoom">M.Tech (Software), BITS Pilani<br>Kotlin | Android | Firebase</h2>
+            <h2 class="w3-large w3-center w3-lobster w3-animate-zoom">M.Tech (Software), BITS Pilani<br>Java, Kotlin, Android, Firebase</h2>
          </div>
          <!--div id="grad1">
             <h2 class="w3-large w3-lobster w3-center w3-animate-zoom">Android & Firebase Developer</h2>
@@ -116,23 +120,32 @@
                   <button class="w3-bar-item w3-button w3-light-grey"><a href="https://stackoverflow.com/users/10436569/suryakant-bharti" target="_blank">StackOverflow</a></button>
                </div><br>
                
-               <div class="w3-bar w3-animate-left">
+			                  <div class="w3-bar w3-animate-left">
+			                     <div id="grad3"><b>- APPS & UI DESIGN -</b></div>
+				  
+				  <button class="w3-bar-item w3-button w3-deep-purple"><a href="https://www.behance.net/suryakantbharti" target="_blank">Behance UI</a></button>
+                 <button class="w3-bar-item w3-button w3-pink"><a href="https://dribbble.com/Suryakant-Bharti" target="_blank">Dribbble UI</a></button>
+                  <br>
+				  
+				                    <button class="w3-bar-item w3-button w3-lime"><a href="https://play.google.com/store/apps/developer?id=Suryakant+Bharti" target="_blank">PlayStore</a></button>
+									<button class="w3-bar-item w3-button w3-light-blue"><a href="https://www.facebook.com/suryakant.bharti.apps" target="_blank">FB Page</a></button>
+                                   
+               </div>
+			   
+    <br>
+               
+			   
+			              <div class="w3-bar w3-animate-left">
                   <div id="grad3"><b>- CODING -</b></div>
                   <button class="w3-bar-item w3-button w3-amber"><a href="https://leetcode.com/suryakantbharti/" target="_blank">LeetCode</a></button>
                   <button class="w3-bar-item w3-button w3-indigo"><a href="https://www.hackerearth.com/@suryakantbharti" target="_blank">HackerEarth</a></button>
                   <br>
                   <button class="w3-bar-item w3-button w3-green"><a href="https://www.hackerrank.com/suryakantbharti" target="_blank">HackerRank</a></button>
                   <button class="w3-bar-item w3-button w3-brown"><a href="https://codechef.com/users/suryakant_007" target="_blank">CodeChef</a></button>
-               </div><br>
-               
-               <div class="w3-bar w3-animate-left">
-                  <div id="grad3"><b>- APPS & UI DESIGN -</b></div>
-                  <button class="w3-bar-item w3-button w3-lime"><a href="https://play.google.com/store/apps/developer?id=Suryakant+Bharti" target="_blank">PlayStore</a></button><button class="w3-bar-item w3-button w3-light-blue"><a href="https://www.facebook.com/suryakant.bharti.apps" target="_blank">Facebook Page</a></button>
-                  
-                  <br>
-                                   <button class="w3-bar-item w3-button w3-deep-purple"><a href="https://www.behance.net/suryakantbharti" target="_blank">Behance UI</a></button>
-                 <button class="w3-bar-item w3-button w3-pink"><a href="https://dribbble.com/Suryakant-Bharti" target="_blank">Dribbble UI</a></button>
-               </div><br>
+               </div>
+			   
+
+<br>
                
                
                <!--div class="w3-bar w3-margin-top w3-animate-right">
