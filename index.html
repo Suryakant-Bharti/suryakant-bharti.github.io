@@ -57,13 +57,14 @@
           opacity:0.80;
       }
       #myVideo {
-          width: 100%;
+          width: auto;
 		  height: 100%;
 		  position: absolute;
-		  padding: 0;
-		  margin: 0;
-		  left: 0px;
-		  top: 0px;
+			margin-left: auto;
+			margin-right: auto;
+		  top: 0;
+		  left: 0;
+		  right: 0;
 		  overflow: hidden;
       }
 	  #myVideo2 {
@@ -79,13 +80,14 @@
    </style>
    <body bgcolor="#020f29">
 
-
-      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-	  
 	     <video autoplay muted loop id="myVideo">
 			  <source src="assets/forest.mp4" type="video/mp4">
 			  Your browser does not support HTML5 video.
 		 </video>
+
+      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+	  
+
 
          <div class="w3-display-topmiddle">
          <div id="grad2">
