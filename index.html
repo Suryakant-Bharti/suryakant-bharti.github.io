@@ -12,11 +12,12 @@
       body,h1 {font-family: "Raleway", sans-serif}
       body, html {height: 100%}
       <!--.bgimg {          // USING VIDEO INSTEAD
-         background-image: url('/assets/nature.jpg'); /* */
-         min-height: 100%;
-         background-position: center;
-         background-size: cover;
+         background-image: url('assets/nature.jpg'); /* */
+           background-position: center;
+			min-height: 100%;
+         
       }-->
+
       .w3-lobster {
   font-family: "Lobster", serif;
 }
@@ -61,7 +62,7 @@
 	        #grad5 {
           opacity:0.90;
       }
-      #myVideo {
+	  	  #myBGimg {
 	  pointer-events: none;
           width: auto;
 		  height: 100%;
@@ -73,6 +74,18 @@
 		  left: 0;
 		  right: 0;
       }
+      #myVideo {
+	  pointer-events: none;
+          width: auto;
+		  height: 100%;
+		  min-height: 724px;
+		  position: fixed;
+			margin-left: auto;
+			margin-right: auto;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+      }      
 	  #myVideo2 {
 		  position: fixed;
 		  right: 0;
@@ -92,11 +105,16 @@
 
       <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 	  
+	  <div id="gradbgimg"></div>
+	  
+	  	<img src="assets/placeholder.jpg" height="100%" id="myBGimg">
 
 	     <video autoplay muted loop id="myVideo">
 			  <source src="assets/temple.mp4" type="video/mp4">
 			  Your browser does not support HTML5 video.
 		 </video>
+		 
+
 		 
 		<div class="w3-display-bottommiddle">
 		<div id="myMP3control">
