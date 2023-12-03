@@ -10,7 +10,7 @@
    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
    <style>
       body,h1 {font-family: "Raleway", sans-serif}
-      body, html {height: 100%}
+      body, html {height: 100% ; overflow: hidden}
       <--.bgimg {
          background-image: url('assets/pat1.jpg'); /* */
          height: 100%;
@@ -59,12 +59,9 @@
       }
       #myVideo {
 	  pointer-events: none;
-		height: 100%;
+height: 125vh;
 		width: auto;
-		min-height:900px;
-		  position: absolute;
-			margin-left: auto;
-			margin-right: auto;
+object-fit: cover;
 		  top: 0;
 		  left: 0;
 		  right: 0;
@@ -78,25 +75,43 @@
 		  min-width: 100%; 
 		  min-height: 100%;
       }
-	  
+	  .container {
+  display: grid;
+  grid-template-columns:  auto;
+  align-items: center;
+  justify-content: center;
+}
 	  
       
    </style>
    <body bgcolor="#020f29">
+   
+           <script>
+		   
+
+
+window.onload = function() {
+	var pic_rand = ["assets/video1.mp4", "assets/video2.mp4", "assets/video3.mp4", "assets/video4.mp4"];
+    var randomNum = Math.floor(Math.random() * pic_rand.length);
+    document.getElementById("myVideo").src = pic_rand[randomNum];
+}
+
+        </script>
+
 
 
       <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 	  
 		<!--use this for diff video for mbile & pc: https://stackoverflow.com/questions/25694350/offering-smaller-versions-of-videos-with-media-query-or-when-mobiles-are-detecte-->
-
-		 <video autoplay muted loop id="myVideo">
-		 <source 
-			  media="(min-width: 1920px)" src="assets/forestpctab.mp4" type="video/mp4">
-		   <source 
-			  media="(max-width: 1919px)" src="assets/forestmob.mp4" type="video/mp4">
+		
+<div class="container" >
+		 <video autoplay muted loop  id="myVideo">
+		 <source src="">
 			  
 			  Your browser does not support HTML5 video.
 		 </video>
+		 </div>
+		 
 
 
          <div class="w3-display-topmiddle">
@@ -127,12 +142,12 @@
 			                  <div class="w3-bar w3-animate-left">
 			                     <div id="grad3"><b>- APPS & UI DESIGN -</b></div>
 				  
-				  <button class="w3-bar-item w3-button w3-deep-purple"><a href="https://www.behance.net/suryakantbharti" target="_blank">Behance UI</a></button>
-                 <button class="w3-bar-item w3-button w3-pink"><a href="https://dribbble.com/Suryakant-Bharti" target="_blank">Dribbble UI</a></button>
+				  <button class="w3-bar-item w3-button w3-deep-purple"><a href="https://www.behance.net/suryakantbharti" target="_blank">Behance</a></button>
+                 <button class="w3-bar-item w3-button w3-pink"><a href="https://dribbble.com/Suryakant-Bharti" target="_blank">Dribbble</a></button>
                   <br>
 				  
 				                    <button class="w3-bar-item w3-button w3-lime"><a href="https://play.google.com/store/apps/developer?id=Suryakant+Bharti" target="_blank">PlayStore</a></button>
-									<button class="w3-bar-item w3-button w3-light-blue"><a href="https://www.facebook.com/suryakant.bharti.apps" target="_blank">FB Page</a></button>
+									<button class="w3-bar-item w3-button w3-indigo"><a href="https://www.facebook.com/suryakant.bharti.apps" target="_blank">FB Page</a></button>
                                    
                </div>
 			   
@@ -142,10 +157,6 @@
 			              <div class="w3-bar w3-animate-left">
                   <div id="grad3"><b>- CODING -</b></div>
                   <button class="w3-bar-item w3-button w3-amber"><a href="https://leetcode.com/suryakantbharti/" target="_blank">LeetCode</a></button>
-                  <button class="w3-bar-item w3-button w3-indigo"><a href="https://www.hackerearth.com/@suryakantbharti" target="_blank">HackerEarth</a></button>
-                  <br>
-                  <button class="w3-bar-item w3-button w3-green"><a href="https://www.hackerrank.com/suryakantbharti" target="_blank">HackerRank</a></button>
-                  <button class="w3-bar-item w3-button w3-brown"><a href="https://codechef.com/users/suryakant_007" target="_blank">CodeChef</a></button>
                </div>
 			   
 
