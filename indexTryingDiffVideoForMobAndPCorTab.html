@@ -62,7 +62,7 @@
 		height: 100%;
 		width: auto;
 		min-height:900px;
-		  position: fixed;
+		  position: absolute;
 			margin-left: auto;
 			margin-right: auto;
 		  top: 0;
@@ -78,6 +78,8 @@
 		  min-width: 100%; 
 		  min-height: 100%;
       }
+	  
+	  
       
    </style>
    <body bgcolor="#020f29">
@@ -86,14 +88,16 @@
       <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 	  
 		<!--use this for diff video for mbile & pc: https://stackoverflow.com/questions/25694350/offering-smaller-versions-of-videos-with-media-query-or-when-mobiles-are-detecte-->
-	     <video autoplay muted loop id="myVideo">
+
+		 <video autoplay muted loop id="myVideo">
 		 <source 
-			  media="(min-width: 2650px)" src="assets/forestpctab.mp4" type="video/mp4" class="center">
+			  media="(min-width: 1920px)" src="assets/forestpctab.mp4" type="video/mp4">
 		   <source 
-			  media="(min-width: 650px)" src="assets/forestmob.mp4" type="video/mp4" class="center">
+			  media="(max-width: 1919px)" src="assets/forestmob.mp4" type="video/mp4">
 			  
 			  Your browser does not support HTML5 video.
 		 </video>
+
 
          <div class="w3-display-topmiddle">
          <div id="grad2">
