@@ -2,47 +2,19 @@
 <!-- REFER liveweave.com FOR LIVE EDITING HTML CSS JS (GREAT WEBSITE) -->
 <html>
    <title>Suryakant Bharti</title>
-   
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-   
-
    <style>
-
       body,h1 {font-family: "Raleway", sans-serif}
       body, html {height: 100% ; overflow: hidden}
-
       .w3-lobster {
       font-family: "Lobster", serif;
       }
-
-      #grad1 {
-      height: 32px;
-      width:100%;
-      margin-top: 0;
-      background-color: #332e47; /* For browsers that do not support gradients */        
-      background-image: linear-gradient(to right, #5a3f58, #533c58, #4a3958, #413658, #373457);
-      color:white;
-      opacity:0.99;
-      }
-
-      #grad4 {
-      height: 54px;
-      width:100%;
-      margin-top: 0;
-      background-color: #4a3958; /* For browsers that do not support gradients */        
-      background-image: linear-gradient(to right, #322a41, #332c44, #332e47, #34304b, #34324e);
-      color:white;
-      opacity:0.99;
-      display: inline-table;
-      }
-
-      #grad2 {
+      #styleHeaderName {
       height: 60px;
       width:100%;
       margin-top: 20px;
@@ -50,10 +22,19 @@
       background-color: #1fc8db; /* For browsers that do not support gradients */        
       background-image: linear-gradient( 90.1deg,  rgba(255,85,85,1) 0.1%, rgba(85,85,255,1) 100% );
       color:white;
-      opacity:0.99;
+      opacity:0.80;
       }
-
-      #grad3 {
+      #styleSubHeaderAbout {
+      height: 54px;
+      width:100%;
+      margin-top: 0;
+      background-color: #4a3958; /* For browsers that do not support gradients */        
+      background-image: linear-gradient(to right, #322a41, #332c44, #332e47, #34304b, #34324e);
+      color:white;
+      opacity:0.80;
+      display: inline-table;
+      }
+      #styleSectionLabel {
       height: 20px;
       width: fit-content;
       background-color: #4a3958; /* For browsers that do not support gradients */        
@@ -61,7 +42,17 @@
       color:white;
       opacity:0.80;
       }
-
+      #styleSectionLinks {
+      width: fit-content;
+      background-color: #4a3958; /* For browsers that do not support gradients */        
+      background-image: radial-gradient( circle 919px at 1.7% 6.1%,  rgba(41,58,76,1) 0%, rgba(40,171,226,1) 100.2% );
+      color:white;
+      opacity:0.80;
+      }
+      #styleMusicButtons {
+      width: fit-content;
+      opacity:0.80;
+      }
       #myVideo {
       pointer-events: none;
       height: 125vh;
@@ -71,111 +62,114 @@
       left: 0;
       right: 0;
       }
-
       #myMP3control {
-      opacity:0.2;
-      position: absolute;
-      bottom: 240px;
-      left: 0;
-      right: 0;
+      width:0px;
+      opacity:0.5;
       }
-
       .container {
       display: grid;
       grid-template-columns:  auto;
       align-items: center;
       justify-content: center;
       }
-
- 
-
    </style>
-
-
    <body bgcolor="#020f29">
-
-
       <script>
          window.onload = function() {
-            var pic_rand = ["assets/video1.mp4", "assets/video2.mp4", "assets/video3.mp4", "assets/video4.mp4"];
-             var randomNum = Math.floor(Math.random() * pic_rand.length);
-             document.getElementById("myVideo").src = pic_rand[randomNum];
+            var video_list = ["assets/video1.mp4", "assets/video2.mp4", "assets/video3.mp4", "assets/video4.mp4"];
+             var randomVideo = Math.floor(Math.random() * video_list.length);
+             document.getElementById("myVideo").src = video_list[randomVideo];
          }
+         
+            
+            audioStatus = function() {
+            var music_list = ["assets/nausicaa_requiem.mp3", "assets/sprited_always_with_me.mp3", "assets/chess_triumph_march.mp3"];
+              var music = document.getElementById('myPlayer');
+              var randomMusic = Math.floor(Math.random() * music_list.length);
+              music.src = music_list[randomMusic];
+            }
+         
+            showControls = function() {
+              var player = document.getElementById('myPlayer');
+              if(player.controls == false) {
+                  player.controls = true;
+               } else {
+                  player.controls = false;
+               }
+            }
+         
+         
       </script>
-
-
       <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-
          <div class="container" >
             <video autoplay muted loop  id="myVideo">
                <source src="">
                Your browser does not support HTML5 video.
             </video>
          </div>
-
-         <div class="w3-center" >
-            <div id="myMP3control">
-               <audio autoplay loop controls>
-                  <source src="assets/nausicaa_requiem.mp3" type="audio/mp3">
-               </audio>
-            </div>
-         </div>
-
          <div class="w3-display-topmiddle">
-
-            <div id="grad2">
+            <div id="styleHeaderName">
                <h1 class="w3-xxlarge w3-center w3-padding-small w3-animate-top">SURYAKANT BHARTI</h1>
             </div>
-
-            <div id="grad4">
+            <div id="styleSubHeaderAbout">
                <h2 class="w3-large w3-center w3-lobster w3-animate-zoom">M.Tech (Software), BITS Pilani<br>Java, Kotlin, Android, Firebase</h2>
             </div>
-
             <div class="w3-small w3-left">
                <div class="w3-bar w3-margin-top w3-animate-left">
-                  <div id="grad3"><b>- PROFESSIONAL PROFILES -</b></div>
-                  <button class="w3-bar-item w3-button w3-blue"><a href="https://www.linkedin.com/in/suryakantbharti" target="_blank">LinkedIn</a></button>
-                  <button class="w3-bar-item w3-button w3-blue-grey"><a href="https://github.com/Suryakant-Bharti" target="_blank">GitHub</a></button>
-                  <button class="w3-bar-item w3-button w3-orange"><a href="https://gitlab.com/Suryakant-Bharti" target="_blank">GitLab</a></button>
+                  <div id="styleSectionLabel"><b>- PROFESSIONAL PROFILES -</b></div>
+                  <div id="styleSectionLinks">
+                     <button class="w3-bar-item w3-button w3-blue"><a href="https://www.linkedin.com/in/suryakantbharti" target="_blank">LinkedIn</a></button>
+                     <button class="w3-bar-item w3-button w3-blue-grey"><a href="https://github.com/Suryakant-Bharti" target="_blank">GitHub</a></button>
+                     <button class="w3-bar-item w3-button w3-orange"><a href="https://gitlab.com/Suryakant-Bharti" target="_blank">GitLab</a></button>
+                  </div>
                </div>
                <br>
                <div class="w3-bar w3-animate-left">
-                  <div id="grad3"><b>- TECHNICAL WRITING -</b></div>
-                  <button class="w3-bar-item w3-button w3-dark-grey"><a href="https://medium.com/@suryakantbharti" target="_blank">Medium</a></button>
-                  <button class="w3-bar-item w3-button w3-light-grey"><a href="https://stackoverflow.com/users/10436569/suryakant-bharti" target="_blank">Stack Overflow</a></button>
+                  <div id="styleSectionLabel"><b>- TECHNICAL WRITING -</b></div>
+                  <div id="styleSectionLinks">
+                     <button class="w3-bar-item w3-button w3-dark-grey"><a href="https://medium.com/@suryakantbharti" target="_blank">Medium</a></button>
+                     <button class="w3-bar-item w3-button w3-light-grey"><a href="https://stackoverflow.com/users/10436569/suryakant-bharti" target="_blank">Stack Overflow</a></button>
+                  </div>
                </div>
                <br>
                <div class="w3-bar w3-animate-left">
-                  <div id="grad3"><b>- APPS & UI DESIGN -</b></div>
-                  <button class="w3-bar-item w3-button w3-deep-purple"><a href="https://www.behance.net/suryakantbharti" target="_blank">Behance UI</a></button>
-                  <button class="w3-bar-item w3-button w3-pink"><a href="https://dribbble.com/Suryakant-Bharti" target="_blank">Dribbble UI</a></button>
-                  <br>
-                  <button class="w3-bar-item w3-button w3-lime"><a href="https://play.google.com/store/apps/developer?id=Suryakant+Bharti" target="_blank">PlayStore</a></button>
-                  <button class="w3-bar-item w3-button w3-indigo"><a href="https://www.facebook.com/suryakant.bharti.apps" target="_blank">FB Page</a></button>
+                  <div id="styleSectionLabel"><b>- APPS & UI DESIGN -</b></div>
+                  <div id="styleSectionLinks">
+                     <button class="w3-bar-item w3-button w3-deep-purple"><a href="https://www.behance.net/suryakantbharti" target="_blank">Behance UI</a></button>
+                     <button class="w3-bar-item w3-button w3-pink"><a href="https://dribbble.com/Suryakant-Bharti" target="_blank">Dribbble UI</a></button>
+                     <br>
+                     <button class="w3-bar-item w3-button w3-lime"><a href="https://play.google.com/store/apps/developer?id=Suryakant+Bharti" target="_blank">PlayStore</a></button>
+                     <button class="w3-bar-item w3-button w3-indigo"><a href="https://www.facebook.com/suryakant.bharti.apps" target="_blank">FB Page</a></button>
+                  </div>
                </div>
                <br>
                <div class="w3-bar w3-animate-left">
-                  <div id="grad3"><b>- CODING -</b></div>
-                  <button class="w3-bar-item w3-button w3-amber"><a href="https://leetcode.com/suryakantbharti/" target="_blank">LeetCode</a></button>
+                  <div id="styleSectionLabel"><b>- CODING -</b></div>
+                  <div id="styleSectionLinks">
+                     <button class="w3-bar-item w3-button w3-amber"><a href="https://leetcode.com/suryakantbharti/" target="_blank">LeetCode</a></button>
+                  </div>
                </div>
                <br>
-               <!--div class="w3-bar w3-margin-top w3-animate-right">
-                  <p><a href="./otherprofiles">Other Profiles...</a></p>
-                  </div-->
+               <div class="w3-bar w3-animate-left">
+                  <div id="styleSectionLabel"><b>- TIMELESS MUSIC -</b></div>
+                  <div id="styleMusicButtons">
+                     <button onclick="document.getElementById('myPlayer').pause()">⏸️</button>
+                     <button onclick="document.getElementById('myPlayer').play()">▶️</button>
+                     <button onclick="audioStatus()">🔀</button>
+                     <button onclick="document.getElementById('myPlayer').volume=0">🔈</button>
+                     <button onclick="document.getElementById('myPlayer').volume=1">🔊</button>
+                     <button onclick="showControls()">⚙️</button>
+                  </div>
+               </div>
+               <br>
+               <div id="myMP3control">
+                  <audio autoplay loop id="myPlayer">
+                     <source src="assets/chess_triumph_march.mp3" type="audio/mp3">
+                  </audio>
+               </div>
+               <br>
             </div>
-            <!--div>
-               <video width="100%" height="184" controls autoplay muted>
-               <source src="assets/sparkle.mp4" type="video/mp4">
-               Your browser does not support the video tag.
-               </video>
-               </div-->
          </div>
-         <!--div class="w3-display-bottomleft w3-padding-large">
-            <a href="https://www.suryakantbharti.com/covid19/tracker.html" target="_blank">COVID Tracker</a>
-            </div-->
-         <!--div class="w3-display-bottomright w3-padding-large">
-            <a href="https://www.suryakantbharti.com/anime/index.html" target="_blank">Anime MV</a>
-            </div-->
       </div>
    </body>
 </html>
