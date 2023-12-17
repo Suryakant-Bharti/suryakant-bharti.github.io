@@ -1,0 +1,5543 @@
+{
+  "name": "Game",
+  "created": "2016-09-26T01:37:35.501Z",
+  "settings": {
+    "physics": {
+      "gravity": [
+        0,
+        -9.8,
+        0
+      ]
+    },
+    "render": {
+      "fog_end": 1000,
+      "tonemapping": 0,
+      "skybox": null,
+      "fog_density": 0.01,
+      "gamma_correction": 1,
+      "exposure": 32,
+      "fog_start": 1,
+      "global_ambient": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "skyboxIntensity": 0,
+      "fog_color": [
+        0,
+        0,
+        0
+      ],
+      "lightmapMode": 1,
+      "fog": "none",
+      "lightmapMaxResolution": 2048,
+      "skyboxMip": 0,
+      "lightmapSizeMultiplier": 16
+    }
+  },
+  "entities": {
+    "cd089900-8389-11e6-8a99-22000ac481df": {
+      "position": [
+        0,
+        2.5,
+        3.700000047683716
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "name": "Light",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "resource_id": "cd089900-8389-11e6-8a99-22000ac481df",
+      "components": {
+        "light": {
+          "castShadows": false,
+          "shadowDistance": 16,
+          "vsmBlurSize": 11,
+          "shadowUpdateMode": 2,
+          "normalOffsetBias": 0.04,
+          "color": [
+            1,
+            1,
+            1
+          ],
+          "falloffMode": 0,
+          "shadowResolution": 1024,
+          "outerConeAngle": 45,
+          "enabled": true,
+          "range": 8,
+          "affectDynamic": true,
+          "intensity": 0.2,
+          "affectLightmapped": false,
+          "vsmBlurMode": 1,
+          "innerConeAngle": 40,
+          "shadowBias": 0.04,
+          "bake": false,
+          "type": "directional",
+          "shadowType": 0,
+          "vsmBias": 0.01,
+          "isStatic": true,
+          "bakeDir": true,
+          "cookieAsset": null,
+          "cookieIntensity": 1,
+          "cookieFalloff": true,
+          "cookieChannel": "rgb",
+          "cookieAngle": 0,
+          "cookieScale": [
+            1,
+            1
+          ],
+          "cookieOffset": [
+            0,
+            0
+          ]
+        }
+      },
+      "rotation": [
+        45,
+        0,
+        0
+      ],
+      "enabled": true,
+      "children": [],
+      "tags": []
+    },
+    "cd08948c-8389-11e6-8a99-22000ac481df": {
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "name": "Game",
+      "parent": null,
+      "resource_id": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "gameManager",
+            "road",
+            "input",
+            "htmlAndCss",
+            "changeSkin",
+            "weChat",
+            "ranking",
+            "revive",
+            "shadowSystem",
+            "setting",
+            "hintText",
+            "message",
+            "autoLoadImg"
+          ],
+          "scripts": {
+            "gameManager": {
+              "enabled": true,
+              "attributes": {
+                "startMenu": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+                "inGame": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+                "gameoverMenu": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+                "scoreEntity": "b9e36925-91ee-4017-ad22-a64b48db5f0b",
+                "scoreStep": 1,
+                "scoreAmazing": 2,
+                "scoreGetGemstone": 3
+              }
+            },
+            "input": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "road": {
+              "enabled": true,
+              "attributes": {
+                "Road01": "4bfe8cdc-b1df-492a-9620-c69f57fbe3c1",
+                "RoadWidth": 20,
+                "roadNum": 12,
+                "treeEntity01": "6df2b4bc-7bbe-4b4a-a74d-004568afd4f9",
+                "treeEntity02": "8f2a11da-2def-4c09-ad35-7a1145c82949",
+                "treeEntity03": "4ceb4145-38ab-4c83-b6a3-82f1ce7ee0b8",
+                "treeNum": 24,
+                "treePositionX": 6.8,
+                "treePositionZ": 3,
+                "treePositionY": -0.8,
+                "boxEntity": "67df607e-af78-413c-af4b-58eaf692550b",
+                "cylinderEntity": "d3541e4a-0e01-4617-bec4-f4ffca3eab08",
+                "gemstoneEntity": "f47f9c41-58e6-4228-bc8b-507b9437d958",
+                "cloudNoAdEntity": "b208bd18-4c4e-4146-add1-4e9eafc54e61",
+                "cloudAdEntity": "876de206-7483-4c12-8efa-5de207f1cab9",
+                "minBlockDis50": 4,
+                "vDis50": 3,
+                "hNum50": 1,
+                "blockNodeNum": 9,
+                "minBlockDis150": 4,
+                "vDis150": 3,
+                "hNum150": 2,
+                "minBlockDis300": 4,
+                "vDis300": 2,
+                "hNum300": 3,
+                "minBlockDis500": 3,
+                "vDis500": 1,
+                "hNum500": 3,
+                "minBlockDis500Up": 2,
+                "vDis500Up": 1,
+                "hNum500Up": 3,
+                "optimizationNum": 5
+              }
+            },
+            "htmlAndCss": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "changeSkin": {
+              "enabled": true,
+              "attributes": {
+                "backgroundEntity": "cae1a5d8-4bda-4d51-89c8-1ef4b6bb5ff5"
+              }
+            },
+            "weChat": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "ranking": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "revive": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "shadowSystem": {
+              "enabled": true,
+              "attributes": {
+                "shadowEntity": "c649f91f-d6a9-4796-9826-4b3e8c000b07"
+              }
+            },
+            "setting": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "hintText": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "message": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "autoLoadImg": {
+              "enabled": true,
+              "attributes": {}
+            }
+          }
+        },
+        "sound": {
+          "enabled": true,
+          "volume": 1,
+          "pitch": 1,
+          "positional": false,
+          "refDistance": 1,
+          "maxDistance": 10000,
+          "rollOffFactor": 1,
+          "distanceModel": "linear",
+          "slots": {
+            "1": {
+              "name": "Bgm",
+              "loop": true,
+              "autoPlay": true,
+              "overlap": false,
+              "asset": 5167919,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.5,
+              "pitch": 1
+            },
+            "2": {
+              "name": "Dead",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5167914,
+              "startTime": 0,
+              "duration": null,
+              "volume": 1,
+              "pitch": 1
+            },
+            "3": {
+              "name": "Turn01",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5167917,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.4,
+              "pitch": 1
+            },
+            "4": {
+              "name": "Turn02",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5167917,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.4,
+              "pitch": 1
+            },
+            "5": {
+              "name": "GetDiamond",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5167916,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.5,
+              "pitch": 1
+            },
+            "6": {
+              "name": "Orz",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5167918,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.35,
+              "pitch": 1
+            },
+            "7": {
+              "name": "Tap",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5167917,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.5,
+              "pitch": 1
+            },
+            "8": {
+              "name": "CountDown01",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5474991,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.5,
+              "pitch": 1
+            },
+            "9": {
+              "name": "CountDown02",
+              "loop": false,
+              "autoPlay": false,
+              "overlap": false,
+              "asset": 5474992,
+              "startTime": 0,
+              "duration": null,
+              "volume": 0.5,
+              "pitch": 1
+            }
+          }
+        }
+      },
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "enabled": true,
+      "children": [
+        "cd0896ee-8389-11e6-8a99-22000ac481df",
+        "cd089900-8389-11e6-8a99-22000ac481df",
+        "aeae227e-3a10-44e6-8924-790cf0226068",
+        "6bac808c-c352-4763-87e9-9d8d3bb93da1",
+        "3aa7f873-5477-4626-b2de-1711e6bbc785",
+        "e381cc27-a460-4072-839f-120b32a7a584",
+        "4bfe8cdc-b1df-492a-9620-c69f57fbe3c1",
+        "ea5a5042-b7c9-430d-9cd7-4d3933a52948",
+        "4d704180-faa3-482f-9601-ac64bcce21d5",
+        "c5954a83-a3b1-4216-8a8f-fabd12d5c97d",
+        "47daa96e-410a-4b4e-aa88-9d9950c291f8"
+      ],
+      "tags": []
+    },
+    "cd0896ee-8389-11e6-8a99-22000ac481df": {
+      "position": [
+        84.12000274658203,
+        76.6500015258789,
+        -152.2100067138672
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "name": "Camera",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "resource_id": "cd0896ee-8389-11e6-8a99-22000ac481df",
+      "components": {
+        "camera": {
+          "projection": 0,
+          "farClip": 1000,
+          "clearColorBuffer": true,
+          "priority": 0,
+          "fov": 60,
+          "clearDepthBuffer": true,
+          "frustumCulling": true,
+          "clearColor": [
+            0.6392156862745098,
+            0.6392156862745098,
+            0.6392156862745098,
+            1
+          ],
+          "enabled": true,
+          "orthoHeight": 4,
+          "nearClip": 0.1,
+          "rect": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "camera"
+          ],
+          "scripts": {
+            "camera": {
+              "enabled": true,
+              "attributes": {
+                "initialX": 0,
+                "initialY": 11,
+                "initialZ": 17,
+                "initialAngleX": -250,
+                "initialAngleY": 90,
+                "initialAngleZ": 90,
+                "speed": 2,
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      },
+      "rotation": [
+        156.46,
+        28.93,
+        -180
+      ],
+      "enabled": true,
+      "children": [
+        "cae1a5d8-4bda-4d51-89c8-1ef4b6bb5ff5"
+      ],
+      "tags": []
+    },
+    "4ceb4145-38ab-4c83-b6a3-82f1ce7ee0b8": {
+      "name": "TreeL",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "4ceb4145-38ab-4c83-b6a3-82f1ce7ee0b8",
+      "parent": "4d704180-faa3-482f-9601-ac64bcce21d5",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5142777,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        }
+      }
+    },
+    "8f2a11da-2def-4c09-ad35-7a1145c82949": {
+      "name": "TreeM",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "8f2a11da-2def-4c09-ad35-7a1145c82949",
+      "parent": "4d704180-faa3-482f-9601-ac64bcce21d5",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5142775,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        }
+      }
+    },
+    "6df2b4bc-7bbe-4b4a-a74d-004568afd4f9": {
+      "name": "TreeS",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "6df2b4bc-7bbe-4b4a-a74d-004568afd4f9",
+      "parent": "4d704180-faa3-482f-9601-ac64bcce21d5",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5142772,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        }
+      }
+    },
+    "67df607e-af78-413c-af4b-58eaf692550b": {
+      "name": "Box",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "67df607e-af78-413c-af4b-58eaf692550b",
+      "parent": "c5954a83-a3b1-4216-8a8f-fabd12d5c97d",
+      "children": [
+        "91ff3b8a-840e-45f3-821a-1c072b682b75"
+      ],
+      "position": [
+        0,
+        0,
+        1.2556242942810059
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5142926,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        },
+        "collision": {
+          "enabled": true,
+          "type": "box",
+          "halfExtents": [
+            0.5,
+            1,
+            0.25
+          ],
+          "radius": 0.5,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "blockTrigger"
+          ],
+          "scripts": {
+            "blockTrigger": {
+              "enabled": true,
+              "attributes": {
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "d3541e4a-0e01-4617-bec4-f4ffca3eab08": {
+      "name": "Cylinder",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "d3541e4a-0e01-4617-bec4-f4ffca3eab08",
+      "parent": "c5954a83-a3b1-4216-8a8f-fabd12d5c97d",
+      "children": [
+        "17acc921-1c8c-4eff-9c36-b91d865dd242"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        2,
+        2,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5142924,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        },
+        "collision": {
+          "enabled": true,
+          "type": "cylinder",
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "radius": 0.1,
+          "axis": 1,
+          "height": 4,
+          "asset": null
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "blockTrigger"
+          ],
+          "scripts": {
+            "blockTrigger": {
+              "enabled": true,
+              "attributes": {
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "b208bd18-4c4e-4146-add1-4e9eafc54e61": {
+      "name": "CloudNoAd",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "b208bd18-4c4e-4146-add1-4e9eafc54e61",
+      "parent": "ea5a5042-b7c9-430d-9cd7-4d3933a52948",
+      "children": [],
+      "position": [
+        1,
+        6,
+        0
+      ],
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "scale": [
+        0.5,
+        1,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5142934,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        }
+      }
+    },
+    "c5954a83-a3b1-4216-8a8f-fabd12d5c97d": {
+      "name": "Block",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "c5954a83-a3b1-4216-8a8f-fabd12d5c97d",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "67df607e-af78-413c-af4b-58eaf692550b",
+        "d3541e4a-0e01-4617-bec4-f4ffca3eab08",
+        "f47f9c41-58e6-4228-bc8b-507b9437d958"
+      ],
+      "position": [
+        -11.34049129486084,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {}
+    },
+    "f47f9c41-58e6-4228-bc8b-507b9437d958": {
+      "name": "Gemstone",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "f47f9c41-58e6-4228-bc8b-507b9437d958",
+      "parent": "c5954a83-a3b1-4216-8a8f-fabd12d5c97d",
+      "children": [],
+      "position": [
+        0,
+        0,
+        -1.0100889205932617
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        4,
+        4,
+        2
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5142966,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        },
+        "collision": {
+          "enabled": true,
+          "type": "sphere",
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "radius": 1,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "getGemstoneTrigger"
+          ],
+          "scripts": {
+            "getGemstoneTrigger": {
+              "enabled": true,
+              "attributes": {
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "4bfe8cdc-b1df-492a-9620-c69f57fbe3c1": {
+      "name": "Road",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "4bfe8cdc-b1df-492a-9620-c69f57fbe3c1",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "fcd0a0bd-a7bb-4041-8f14-60663d77295b"
+      ],
+      "position": [
+        0,
+        0,
+        16
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        2
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5145249,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        },
+        "rigidbody": {
+          "enabled": true,
+          "type": "static",
+          "mass": 1,
+          "linearDamping": 0,
+          "angularDamping": 0,
+          "linearFactor": [
+            1,
+            1,
+            1
+          ],
+          "angularFactor": [
+            1,
+            1,
+            1
+          ],
+          "friction": 0,
+          "restitution": 0
+        },
+        "collision": {
+          "enabled": true,
+          "type": "box",
+          "halfExtents": [
+            6,
+            0.5,
+            10
+          ],
+          "radius": 0.5,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        }
+      }
+    },
+    "fcd0a0bd-a7bb-4041-8f14-60663d77295b": {
+      "name": "BarAddRoad",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "fcd0a0bd-a7bb-4041-8f14-60663d77295b",
+      "parent": "4bfe8cdc-b1df-492a-9620-c69f57fbe3c1",
+      "children": [],
+      "position": [
+        0,
+        1.100000023841858,
+        -4.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        13,
+        1,
+        0.5
+      ],
+      "components": {
+        "collision": {
+          "enabled": true,
+          "type": "box",
+          "halfExtents": [
+            6.5,
+            0.5,
+            1
+          ],
+          "radius": 0.5,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "triggerAddRoad"
+          ],
+          "scripts": {
+            "triggerAddRoad": {
+              "enabled": true,
+              "attributes": {}
+            }
+          }
+        }
+      }
+    },
+    "aeae227e-3a10-44e6-8924-790cf0226068": {
+      "name": "DeadTrigger",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "aeae227e-3a10-44e6-8924-790cf0226068",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [],
+      "position": [
+        0,
+        -0.5,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        6,
+        1,
+        6
+      ],
+      "components": {
+        "collision": {
+          "enabled": true,
+          "type": "box",
+          "halfExtents": [
+            3,
+            0.5,
+            3
+          ],
+          "radius": 0.5,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "triggerDead",
+            "ballTriggerFollower"
+          ],
+          "scripts": {
+            "triggerDead": {
+              "enabled": true,
+              "attributes": {}
+            },
+            "ballTriggerFollower": {
+              "enabled": true,
+              "attributes": {
+                "initialX": 0,
+                "initialY": -0.05,
+                "initialZ": 0,
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "47daa96e-410a-4b4e-aa88-9d9950c291f8": {
+      "name": "UI",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "47daa96e-410a-4b4e-aa88-9d9950c291f8",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "23977268-465f-4ec6-92d2-fe43a3aace4c",
+        "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+        "d46c539b-99ec-49bc-b302-e1e298fd00ef"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {}
+    },
+    "23977268-465f-4ec6-92d2-fe43a3aace4c": {
+      "name": "StartMenu",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "parent": "47daa96e-410a-4b4e-aa88-9d9950c291f8",
+      "children": [
+        "204be162-78a9-4a8c-a69d-d42e625974e2",
+        "fe2b34fb-f09f-48ab-b876-01c7a0dd9e9d",
+        "ec65ad46-c615-4d7e-95b4-11608183c85a",
+        "70f4973b-fb84-4998-84ef-f85503334b47",
+        "6e1634d4-ce0f-47b2-85ef-ec52f43f160a",
+        "69cd77e4-b5fc-4038-97e8-4df9b5ae3814",
+        "9faf3980-9b94-46c0-9418-c382bd4f463d",
+        "c20fbbcf-10ee-4cb7-a485-f7054ba67085",
+        "a77e9004-54fe-4f42-9c38-f509446a5a2b",
+        "36125691-9a91-45ed-9b27-c1f22e084d5e"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "startMenu"
+          ],
+          "scripts": {
+            "startMenu": {
+              "enabled": true,
+              "attributes": {
+                "startBtnEntity": "6e1634d4-ce0f-47b2-85ef-ec52f43f160a",
+                "moreGameEntity": "9faf3980-9b94-46c0-9418-c382bd4f463d",
+                "rankingEntity": "c20fbbcf-10ee-4cb7-a485-f7054ba67085",
+                "rotateSpeed": 60,
+                "gameRuleEntity": "69cd77e4-b5fc-4038-97e8-4df9b5ae3814",
+                "diamondNumberEntity": "fe2b34fb-f09f-48ab-b876-01c7a0dd9e9d",
+                "rotateAnimal": "70f4973b-fb84-4998-84ef-f85503334b47",
+                "settingEntity": "a77e9004-54fe-4f42-9c38-f509446a5a2b"
+              }
+            }
+          }
+        }
+      }
+    },
+    "6e1634d4-ce0f-47b2-85ef-ec52f43f160a": {
+      "name": "StartBtn",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "6e1634d4-ce0f-47b2-85ef-ec52f43f160a",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5156613,
+                "pos": [
+                  0,
+                  -100
+                ],
+                "size": [
+                  144,
+                  144
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 4,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "69cd77e4-b5fc-4038-97e8-4df9b5ae3814": {
+      "name": "Rule",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "69cd77e4-b5fc-4038-97e8-4df9b5ae3814",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5294656,
+                "pos": [
+                  -130,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "c20fbbcf-10ee-4cb7-a485-f7054ba67085": {
+      "name": "Ranking",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "c20fbbcf-10ee-4cb7-a485-f7054ba67085",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5156611,
+                "pos": [
+                  -44,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "a77e9004-54fe-4f42-9c38-f509446a5a2b": {
+      "name": "Setting",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "a77e9004-54fe-4f42-9c38-f509446a5a2b",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5629861,
+                "pos": [
+                  130,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e": {
+      "name": "InGame",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "parent": "47daa96e-410a-4b4e-aa88-9d9950c291f8",
+      "children": [
+        "598aeae5-10eb-4cc7-a31f-a70f86ea1849",
+        "ff2d3393-ae8f-4aaa-9c54-b6f89d72807a",
+        "6e6dbdba-4878-4907-9699-d7856a0ad548",
+        "f330aa34-7bc2-4b30-ab36-da0ceedbd011",
+        "b9e36925-91ee-4017-ad22-a64b48db5f0b",
+        "808df1dd-5f74-4179-a3ed-b17cc5976937",
+        "4fd2f56a-69fd-4cc8-8f43-80ebd6396dca"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "inGame"
+          ],
+          "scripts": {
+            "inGame": {
+              "enabled": true,
+              "attributes": {
+                "scoreEntity": "b9e36925-91ee-4017-ad22-a64b48db5f0b",
+                "scaleStep": 50,
+                "scaleTimes": 10,
+                "moveStep": 3,
+                "countDownEntity": "808df1dd-5f74-4179-a3ed-b17cc5976937",
+                "countDownOverlayEntity": "4fd2f56a-69fd-4cc8-8f43-80ebd6396dca",
+                "diamondNumberEntity": "ff2d3393-ae8f-4aaa-9c54-b6f89d72807a",
+                "diamondEffectEntity": "6e6dbdba-4878-4907-9699-d7856a0ad548",
+                "scoreEffectEntity": "f330aa34-7bc2-4b30-ab36-da0ceedbd011"
+              }
+            }
+          }
+        }
+      }
+    },
+    "d46c539b-99ec-49bc-b302-e1e298fd00ef": {
+      "name": "Gameover",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "parent": "47daa96e-410a-4b4e-aa88-9d9950c291f8",
+      "children": [
+        "63a12781-ca11-4302-8e47-cd8ef00145aa",
+        "2fc3841a-a6a5-4c21-a98b-6d6507ac16b7",
+        "218268d3-a248-43d3-a842-5205a641a088",
+        "084d30e7-e37a-435a-823b-4e9f1c24e24d",
+        "d26ad89b-146e-4ebb-afc9-959c74079cbf",
+        "ce5d4518-22ae-4830-8bdd-78c371fdd559",
+        "0081dfcd-b300-4485-94dc-5fd39f60957c",
+        "86d4eff5-adc3-4bbb-99fe-206da452411d",
+        "538e6ec6-ee91-4f67-8320-f8dc2f25fa3a",
+        "77b96217-793d-4434-bf27-f8337646d0ff",
+        "b43d069d-ee20-48e3-a3c2-e43c641b2df5",
+        "8320e7b1-1f47-4848-bf7b-91cb3bb7ee07",
+        "869ce0e5-ac0c-44a5-bfae-84993a177c5e",
+        "12030a75-751c-4dd5-b0d3-4b913df61dd6",
+        "2246557a-a1a3-4d0b-a665-3eeecbcf2aae",
+        "dbb26068-5d4f-4d5d-95cd-4728865e73a8"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "gameoverMenu"
+          ],
+          "scripts": {
+            "gameoverMenu": {
+              "enabled": true,
+              "attributes": {
+                "scoreEntity": "ce5d4518-22ae-4830-8bdd-78c371fdd559",
+                "bestScoreEntity": "538e6ec6-ee91-4f67-8320-f8dc2f25fa3a",
+                "restartEntity": "77b96217-793d-4434-bf27-f8337646d0ff",
+                "moreGameEntity": "12030a75-751c-4dd5-b0d3-4b913df61dd6",
+                "rankingEntity": "2246557a-a1a3-4d0b-a665-3eeecbcf2aae",
+                "gameRuleEntity": "869ce0e5-ac0c-44a5-bfae-84993a177c5e",
+                "diamondNumberEntity": "218268d3-a248-43d3-a842-5205a641a088",
+                "settingEntity": "dbb26068-5d4f-4d5d-95cd-4728865e73a8",
+                "homeEntity": "8320e7b1-1f47-4848-bf7b-91cb3bb7ee07",
+                "reChallengeEntity": "b43d069d-ee20-48e3-a3c2-e43c641b2df5",
+                "challengeResultEntity": "084d30e7-e37a-435a-823b-4e9f1c24e24d"
+              }
+            }
+          }
+        }
+      }
+    },
+    "b9e36925-91ee-4017-ad22-a64b48db5f0b": {
+      "name": "Score",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "b9e36925-91ee-4017-ad22-a64b48db5f0b",
+      "parent": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "0",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": 0,
+                "y": -80,
+                "depth": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 1600
+              }
+            }
+          }
+        }
+      }
+    },
+    "d26ad89b-146e-4ebb-afc9-959c74079cbf": {
+      "name": "Frame",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "d26ad89b-146e-4ebb-afc9-959c74079cbf",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5156612,
+                "pos": [
+                  0,
+                  -200
+                ],
+                "size": [
+                  309,
+                  115
+                ],
+                "depth": 2,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "ce5d4518-22ae-4830-8bdd-78c371fdd559": {
+      "name": "Score",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "ce5d4518-22ae-4830-8bdd-78c371fdd559",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "0",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": 0,
+                "y": -398,
+                "depth": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 1440
+              }
+            }
+          }
+        }
+      }
+    },
+    "0081dfcd-b300-4485-94dc-5fd39f60957c": {
+      "name": "BestBacklay",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "0081dfcd-b300-4485-94dc-5fd39f60957c",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5157479,
+                "pos": [
+                  0,
+                  -290
+                ],
+                "size": [
+                  512,
+                  40
+                ],
+                "depth": 2,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "538e6ec6-ee91-4f67-8320-f8dc2f25fa3a": {
+      "name": "BestScore",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "538e6ec6-ee91-4f67-8320-f8dc2f25fa3a",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "0",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": 180,
+                "y": -1320,
+                "depth": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 3280
+              }
+            }
+          }
+        }
+      }
+    },
+    "86d4eff5-adc3-4bbb-99fe-206da452411d": {
+      "name": "Best",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "86d4eff5-adc3-4bbb-99fe-206da452411d",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5157510,
+                "pos": [
+                  -45,
+                  -290
+                ],
+                "size": [
+                  64,
+                  20
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "77b96217-793d-4434-bf27-f8337646d0ff": {
+      "name": "Restart",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "77b96217-793d-4434-bf27-f8337646d0ff",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5630454,
+                "pos": [
+                  0,
+                  -100
+                ],
+                "size": [
+                  144,
+                  144
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 4,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "dbb26068-5d4f-4d5d-95cd-4728865e73a8": {
+      "name": "Setting",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "dbb26068-5d4f-4d5d-95cd-4728865e73a8",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5629861,
+                "pos": [
+                  130,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "2246557a-a1a3-4d0b-a665-3eeecbcf2aae": {
+      "name": "Ranking",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "2246557a-a1a3-4d0b-a665-3eeecbcf2aae",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5156611,
+                "pos": [
+                  -44,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "12030a75-751c-4dd5-b0d3-4b913df61dd6": {
+      "name": "MoreGame",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "12030a75-751c-4dd5-b0d3-4b913df61dd6",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5156607,
+                "pos": [
+                  44,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "4d704180-faa3-482f-9601-ac64bcce21d5": {
+      "name": "Tree",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "4d704180-faa3-482f-9601-ac64bcce21d5",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "4ceb4145-38ab-4c83-b6a3-82f1ce7ee0b8",
+        "8f2a11da-2def-4c09-ad35-7a1145c82949",
+        "6df2b4bc-7bbe-4b4a-a74d-004568afd4f9"
+      ],
+      "position": [
+        -13.694215774536133,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {}
+    },
+    "ba97d08c-33ed-4454-a3c3-c2092e0aa176": {
+      "name": "StepCat",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "ba97d08c-33ed-4454-a3c3-c2092e0aa176",
+      "parent": "6bac808c-c352-4763-87e9-9d8d3bb93da1",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        -1.2842612749348978e-14,
+        0,
+        -1.2588867089340008e-14
+      ],
+      "scale": [
+        0.9999999403953552,
+        0.9999999403953552,
+        0.9999999403953552
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": true,
+          "numParticles": 10,
+          "lifetime": 0.1,
+          "rate": 0.01,
+          "rate2": 0.01,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": true,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 0.1,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 1,
+          "emitterExtents": [
+            0.5,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5189420,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0,
+                0.03,
+                5
+              ],
+              [
+                0,
+                0,
+                0.03,
+                5
+              ],
+              [
+                0,
+                0,
+                0.03,
+                -5
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0.0625,
+                0.03,
+                -5
+              ],
+              [
+                0,
+                0,
+                0.030232558139534883,
+                -5
+              ],
+              [
+                0,
+                0.0625,
+                0.03,
+                5
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0,
+              0.03,
+              0.02,
+              0.1,
+              0.1,
+              1,
+              0.25625
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0,
+              0.03,
+              0.02,
+              0.1,
+              0.1,
+              1,
+              0.25625
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0,
+              0.03,
+              0.5,
+              1,
+              0.375
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0,
+              0.03,
+              0.5,
+              1,
+              0.375
+            ]
+          }
+        }
+      }
+    },
+    "ec65ad46-c615-4d7e-95b4-11608183c85a": {
+      "name": "Title",
+      "tags": [
+        "Title"
+      ],
+      "enabled": true,
+      "resource_id": "ec65ad46-c615-4d7e-95b4-11608183c85a",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5354148,
+                "pos": [
+                  0,
+                  -100
+                ],
+                "size": [
+                  276,
+                  150
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "aa4b2808-9e68-4170-8801-c9159c10640e": {
+      "name": "DeathParticleCat",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "aa4b2808-9e68-4170-8801-c9159c10640e",
+      "parent": "e381cc27-a460-4072-839f-120b32a7a584",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.2,
+        1
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": false,
+          "numParticles": 15,
+          "lifetime": 1,
+          "rate": 0.001,
+          "rate2": 0.001,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": false,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 0.03,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 1,
+          "emitterExtents": [
+            0,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5282820,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                10,
+                0.3,
+                10,
+                1,
+                4
+              ],
+              [
+                0,
+                5.4375,
+                0.2,
+                5.075000000000003,
+                1,
+                -12
+              ],
+              [
+                0,
+                9.899999999999999,
+                0.3,
+                10,
+                1,
+                4.25
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.75
+              ],
+              [
+                0,
+                5.799999999999997,
+                0.19767441860465115,
+                5.4375,
+                1,
+                -11.75
+              ],
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.25
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0.002325581395348837,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "6bac808c-c352-4763-87e9-9d8d3bb93da1": {
+      "name": "Animal",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "6bac808c-c352-4763-87e9-9d8d3bb93da1",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "ba97d08c-33ed-4454-a3c3-c2092e0aa176"
+      ],
+      "position": [
+        0,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        150,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": false,
+          "type": "asset",
+          "asset": 5270962,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        },
+        "collision": {
+          "enabled": true,
+          "type": "box",
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "radius": 0.5,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        },
+        "rigidbody": {
+          "enabled": true,
+          "type": "dynamic",
+          "mass": 1,
+          "linearDamping": 0,
+          "angularDamping": 0,
+          "linearFactor": [
+            1,
+            1,
+            1
+          ],
+          "angularFactor": [
+            1,
+            1,
+            1
+          ],
+          "friction": 0,
+          "restitution": 0
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "ballCat"
+          ],
+          "scripts": {
+            "ballCat": {
+              "enabled": true,
+              "attributes": {
+                "velocitySpeedX": 3,
+                "velocitySpeedZ": 9,
+                "initialX": 0,
+                "initialY": 1,
+                "initialZ": 0,
+                "initialRX": 0,
+                "initialRY": 150,
+                "initialRZ": 0,
+                "deathParticle": "aa4b2808-9e68-4170-8801-c9159c10640e",
+                "maxVelocitySpeedX": 17,
+                "maxVelocitySpeedZ": 51,
+                "acceleration": 0.2,
+                "initialVelocitySpeedX": 3,
+                "initialVelocitySpeedZ": 9,
+                "stepParticle": "ba97d08c-33ed-4454-a3c3-c2092e0aa176",
+                "getGemstoneParticle": "d6635293-c67c-41cd-89e4-7d1b49b212c7",
+                "dodgeParticle": "ab58b396-b8fe-4ea8-a260-61616c016b5a",
+                "startAcceleration": 3,
+                "stage01MaxSpeed": 10,
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "876de206-7483-4c12-8efa-5de207f1cab9": {
+      "name": "CloudAD",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "876de206-7483-4c12-8efa-5de207f1cab9",
+      "parent": "ea5a5042-b7c9-430d-9cd7-4d3933a52948",
+      "children": [],
+      "position": [
+        1,
+        6,
+        0
+      ],
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "scale": [
+        0.5,
+        1,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "asset",
+          "asset": 5271473,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        }
+      }
+    },
+    "ea5a5042-b7c9-430d-9cd7-4d3933a52948": {
+      "name": "Cloud",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "ea5a5042-b7c9-430d-9cd7-4d3933a52948",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "b208bd18-4c4e-4146-add1-4e9eafc54e61",
+        "876de206-7483-4c12-8efa-5de207f1cab9"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {}
+    },
+    "91ff3b8a-840e-45f3-821a-1c072b682b75": {
+      "name": "Amazing",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "91ff3b8a-840e-45f3-821a-1c072b682b75",
+      "parent": "67df607e-af78-413c-af4b-58eaf692550b",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "collision": {
+          "enabled": true,
+          "type": "cylinder",
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "radius": 1.8,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "blockAmazingTrigger"
+          ],
+          "scripts": {
+            "blockAmazingTrigger": {
+              "enabled": true,
+              "attributes": {
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "17acc921-1c8c-4eff-9c36-b91d865dd242": {
+      "name": "Amazing",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "17acc921-1c8c-4eff-9c36-b91d865dd242",
+      "parent": "d3541e4a-0e01-4617-bec4-f4ffca3eab08",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "collision": {
+          "enabled": true,
+          "type": "cylinder",
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "radius": 1.5,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "blockAmazingTrigger"
+          ],
+          "scripts": {
+            "blockAmazingTrigger": {
+              "enabled": true,
+              "attributes": {
+                "animalEntity": "6bac808c-c352-4763-87e9-9d8d3bb93da1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "70f4973b-fb84-4998-84ef-f85503334b47": {
+      "name": "RotateAnimal",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "70f4973b-fb84-4998-84ef-f85503334b47",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        6.3,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": false,
+          "type": "asset",
+          "asset": 5270962,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        },
+        "script": {
+          "enabled": true,
+          "order": [],
+          "scripts": {}
+        }
+      }
+    },
+    "e381cc27-a460-4072-839f-120b32a7a584": {
+      "name": "Particle",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "e381cc27-a460-4072-839f-120b32a7a584",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "ab58b396-b8fe-4ea8-a260-61616c016b5a",
+        "d6635293-c67c-41cd-89e4-7d1b49b212c7",
+        "aa4b2808-9e68-4170-8801-c9159c10640e",
+        "0daf2333-3bc4-4a7b-892f-81b2b1ec3967",
+        "95f14e88-e56e-4f39-bbee-a6543c386035",
+        "2593788f-b3ff-456e-b01d-213cdf71fc98",
+        "423f818d-f15a-4d70-8de8-eb407683f99f"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {}
+    },
+    "ab58b396-b8fe-4ea8-a260-61616c016b5a": {
+      "name": "DodgeParticle",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "ab58b396-b8fe-4ea8-a260-61616c016b5a",
+      "parent": "e381cc27-a460-4072-839f-120b32a7a584",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0.02777099609375
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        0.5,
+        1
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": false,
+          "numParticles": 1,
+          "lifetime": 0.8,
+          "rate": 0.1,
+          "rate2": 0.1,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": false,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 1,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 0,
+          "emitterExtents": [
+            0,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5292814,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -0.8125
+              ],
+              [
+                0,
+                59.2,
+                0.18372093023255814,
+                27.332008368539483,
+                0.36511627906976746,
+                23.23220711325856
+              ],
+              [
+                0,
+                -36.55000000000001
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -0.8125
+              ],
+              [
+                0,
+                59.2,
+                0.18372093023255814,
+                27.332008368539483,
+                0.36511627906976746,
+                23.23220711325856
+              ],
+              [
+                0,
+                -36.55000000000001
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.78125,
+              0.298,
+              3.1,
+              0.48372093023255813,
+              2.7124999999999995,
+              1,
+              2.45
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.78125,
+              0.298,
+              3.1,
+              0.48372093023255813,
+              2.7124999999999995,
+              1,
+              2.45
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0.4
+              ],
+              [
+                0,
+                0.4
+              ],
+              [
+                0,
+                0.4
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.2875,
+              0.2069767441860465,
+              0.925,
+              0.3697674418604651,
+              0.73125,
+              1,
+              0.13749999999999996
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.2875,
+              0.2069767441860465,
+              0.925,
+              0.3697674418604651,
+              0.73125,
+              1,
+              0.13749999999999996
+            ]
+          }
+        }
+      }
+    },
+    "d6635293-c67c-41cd-89e4-7d1b49b212c7": {
+      "name": "GetGemstoneParticle",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "d6635293-c67c-41cd-89e4-7d1b49b212c7",
+      "parent": "e381cc27-a460-4072-839f-120b32a7a584",
+      "children": [],
+      "position": [
+        0,
+        0.8,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": false,
+          "numParticles": 20,
+          "lifetime": 1,
+          "rate": 0.001,
+          "rate2": 0.001,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": false,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 0.1,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 0,
+          "emitterExtents": [
+            0,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5317330,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                10,
+                0.3,
+                10,
+                1,
+                4
+              ],
+              [
+                0,
+                10.3125,
+                0.23488372093023255,
+                7.8125,
+                1,
+                -12
+              ],
+              [
+                0,
+                9.899999999999999,
+                0.3,
+                10,
+                1,
+                4.25
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.75
+              ],
+              [
+                0,
+                10.625000000000002,
+                0.23488372093023255,
+                8.125,
+                1,
+                -11.75
+              ],
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.25
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.275,
+              1,
+              0.043749999999999956
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.275,
+              1,
+              0.043749999999999956
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "9faf3980-9b94-46c0-9418-c382bd4f463d": {
+      "name": "MoreGame",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "9faf3980-9b94-46c0-9418-c382bd4f463d",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5156607,
+                "pos": [
+                  44,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "869ce0e5-ac0c-44a5-bfae-84993a177c5e": {
+      "name": "Rule",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "869ce0e5-ac0c-44a5-bfae-84993a177c5e",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5294656,
+                "pos": [
+                  -130,
+                  96
+                ],
+                "size": [
+                  64,
+                  64
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "0daf2333-3bc4-4a7b-892f-81b2b1ec3967": {
+      "name": "DeathParticleBear",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "0daf2333-3bc4-4a7b-892f-81b2b1ec3967",
+      "parent": "e381cc27-a460-4072-839f-120b32a7a584",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.2,
+        1
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": false,
+          "numParticles": 15,
+          "lifetime": 1,
+          "rate": 0.001,
+          "rate2": 0.001,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": false,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 0.03,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 1,
+          "emitterExtents": [
+            0,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5317331,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                10,
+                0.3,
+                10,
+                1,
+                4
+              ],
+              [
+                0,
+                5.4375,
+                0.2,
+                5.075000000000003,
+                1,
+                -12
+              ],
+              [
+                0,
+                9.899999999999999,
+                0.3,
+                10,
+                1,
+                4.25
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.75
+              ],
+              [
+                0,
+                5.799999999999997,
+                0.19767441860465115,
+                5.4375,
+                1,
+                -11.75
+              ],
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.25
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "95f14e88-e56e-4f39-bbee-a6543c386035": {
+      "name": "DeathParticleDragon",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "95f14e88-e56e-4f39-bbee-a6543c386035",
+      "parent": "e381cc27-a460-4072-839f-120b32a7a584",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.2,
+        1
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": false,
+          "numParticles": 15,
+          "lifetime": 1,
+          "rate": 0.001,
+          "rate2": 0.001,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": false,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 0.03,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 1,
+          "emitterExtents": [
+            0,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5317329,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                10,
+                0.3,
+                10,
+                1,
+                4
+              ],
+              [
+                0,
+                5.4375,
+                0.2,
+                5.075000000000003,
+                1,
+                -12
+              ],
+              [
+                0,
+                9.899999999999999,
+                0.3,
+                10,
+                1,
+                4.25
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.75
+              ],
+              [
+                0,
+                5.799999999999997,
+                0.19767441860465115,
+                5.4375,
+                1,
+                -11.75
+              ],
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.25
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "2593788f-b3ff-456e-b01d-213cdf71fc98": {
+      "name": "DeathParticleLion",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "2593788f-b3ff-456e-b01d-213cdf71fc98",
+      "parent": "e381cc27-a460-4072-839f-120b32a7a584",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.2,
+        1
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": false,
+          "numParticles": 15,
+          "lifetime": 1,
+          "rate": 0.001,
+          "rate2": 0.001,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": false,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 0.03,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 1,
+          "emitterExtents": [
+            0,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5317330,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                10,
+                0.3,
+                10,
+                1,
+                4
+              ],
+              [
+                0,
+                5.4375,
+                0.2,
+                5.075000000000003,
+                1,
+                -12
+              ],
+              [
+                0,
+                9.899999999999999,
+                0.3,
+                10,
+                1,
+                4.25
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.75
+              ],
+              [
+                0,
+                5.799999999999997,
+                0.19767441860465115,
+                5.4375,
+                1,
+                -11.75
+              ],
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.25
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "423f818d-f15a-4d70-8de8-eb407683f99f": {
+      "name": "DeathParticlePig",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "423f818d-f15a-4d70-8de8-eb407683f99f",
+      "parent": "e381cc27-a460-4072-839f-120b32a7a584",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1.2,
+        1
+      ],
+      "components": {
+        "particlesystem": {
+          "enabled": true,
+          "autoPlay": false,
+          "numParticles": 15,
+          "lifetime": 1,
+          "rate": 0.001,
+          "rate2": 0.001,
+          "startAngle": 0,
+          "startAngle2": 0,
+          "loop": false,
+          "preWarm": false,
+          "lighting": false,
+          "halfLambert": false,
+          "intensity": 0.03,
+          "depthWrite": false,
+          "depthSoftening": 0,
+          "sort": 2,
+          "blendType": 2,
+          "stretch": 0,
+          "alignToMotion": false,
+          "emitterShape": 1,
+          "emitterExtents": [
+            0,
+            0,
+            0
+          ],
+          "emitterRadius": 0,
+          "initialVelocity": 0,
+          "animTilesX": 1,
+          "animTilesY": 1,
+          "animNumFrames": 1,
+          "animSpeed": 1,
+          "animLoop": true,
+          "wrap": false,
+          "wrapBounds": [
+            0,
+            0,
+            0
+          ],
+          "colorMapAsset": 5317328,
+          "normalMapAsset": null,
+          "mesh": null,
+          "localVelocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                10,
+                0.3,
+                10,
+                1,
+                4
+              ],
+              [
+                0,
+                5.4375,
+                0.2,
+                5.075000000000003,
+                1,
+                -12
+              ],
+              [
+                0,
+                9.899999999999999,
+                0.3,
+                10,
+                1,
+                4.25
+              ]
+            ],
+            "betweenCurves": true
+          },
+          "localVelocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.75
+              ],
+              [
+                0,
+                5.799999999999997,
+                0.19767441860465115,
+                5.4375,
+                1,
+                -11.75
+              ],
+              [
+                0,
+                -10,
+                0.3,
+                -10,
+                1,
+                -5.25
+              ]
+            ]
+          },
+          "velocityGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "velocityGraph2": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ]
+          },
+          "rotationSpeedGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ],
+            "betweenCurves": false
+          },
+          "rotationSpeedGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0
+            ]
+          },
+          "scaleGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ],
+            "betweenCurves": false
+          },
+          "scaleGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              0.29374999999999996,
+              0.9953488372093023,
+              0.07499999999999996
+            ]
+          },
+          "colorGraph": {
+            "type": 1,
+            "keys": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ],
+            "betweenCurves": false
+          },
+          "alphaGraph2": {
+            "type": 1,
+            "keys": [
+              0,
+              1,
+              0.986046511627907,
+              0.75
+            ]
+          }
+        }
+      }
+    },
+    "cae1a5d8-4bda-4d51-89c8-1ef4b6bb5ff5": {
+      "name": "Background",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "cae1a5d8-4bda-4d51-89c8-1ef4b6bb5ff5",
+      "parent": "cd0896ee-8389-11e6-8a99-22000ac481df",
+      "children": [],
+      "position": [
+        7.945104598999023,
+        -5.326650619506836,
+        -92.73998260498047
+      ],
+      "rotation": [
+        85,
+        0,
+        0
+      ],
+      "scale": [
+        150,
+        1,
+        134.30328730837005
+      ],
+      "components": {
+        "model": {
+          "enabled": true,
+          "isStatic": true,
+          "type": "plane",
+          "asset": null,
+          "materialAsset": 5446437,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        }
+      }
+    },
+    "204be162-78a9-4a8c-a69d-d42e625974e2": {
+      "name": "Diamond",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "204be162-78a9-4a8c-a69d-d42e625974e2",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5468118,
+                "pos": [
+                  -85,
+                  -25
+                ],
+                "size": [
+                  32,
+                  25
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 2,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "fe2b34fb-f09f-48ab-b876-01c7a0dd9e9d": {
+      "name": "DiamondNumber",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "fe2b34fb-f09f-48ab-b876-01c7a0dd9e9d",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "36865",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": -200,
+                "y": -140,
+                "depth": 1,
+                "anchor": 2,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 4000
+              }
+            }
+          }
+        }
+      }
+    },
+    "ff2d3393-ae8f-4aaa-9c54-b6f89d72807a": {
+      "name": "DiamondNumber",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "ff2d3393-ae8f-4aaa-9c54-b6f89d72807a",
+      "parent": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "36865",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": -200,
+                "y": -140,
+                "depth": 1,
+                "anchor": 2,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 4000
+              }
+            }
+          }
+        }
+      }
+    },
+    "598aeae5-10eb-4cc7-a31f-a70f86ea1849": {
+      "name": "Diamond",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "598aeae5-10eb-4cc7-a31f-a70f86ea1849",
+      "parent": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5468118,
+                "pos": [
+                  -85,
+                  -25
+                ],
+                "size": [
+                  32,
+                  25
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 2,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "218268d3-a248-43d3-a842-5205a641a088": {
+      "name": "DiamondNumber",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "218268d3-a248-43d3-a842-5205a641a088",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "36865",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": -200,
+                "y": -140,
+                "depth": 1,
+                "anchor": 2,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 4000
+              }
+            }
+          }
+        }
+      }
+    },
+    "2fc3841a-a6a5-4c21-a98b-6d6507ac16b7": {
+      "name": "Diamond",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "2fc3841a-a6a5-4c21-a98b-6d6507ac16b7",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5468118,
+                "pos": [
+                  -85,
+                  -25
+                ],
+                "size": [
+                  32,
+                  25
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 2,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "808df1dd-5f74-4179-a3ed-b17cc5976937": {
+      "name": "CountDown",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "808df1dd-5f74-4179-a3ed-b17cc5976937",
+      "parent": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "3",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": 0,
+                "y": 0,
+                "depth": 1,
+                "anchor": 4,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 3720
+              }
+            }
+          }
+        }
+      }
+    },
+    "4fd2f56a-69fd-4cc8-8f43-80ebd6396dca": {
+      "name": "CountDownOverlay",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "4fd2f56a-69fd-4cc8-8f43-80ebd6396dca",
+      "parent": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5157479,
+                "pos": [
+                  0,
+                  0
+                ],
+                "size": [
+                  720,
+                  720
+                ],
+                "depth": 2,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 4,
+                "pivot": 4,
+                "tint": [
+                  0,
+                  0,
+                  0,
+                  0.29411764705882354
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "6e6dbdba-4878-4907-9699-d7856a0ad548": {
+      "name": "DiamondChangeEffect",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "6e6dbdba-4878-4907-9699-d7856a0ad548",
+      "parent": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "+2",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": -160,
+                "y": -200,
+                "depth": 1,
+                "anchor": 2,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 2880
+              }
+            }
+          }
+        }
+      }
+    },
+    "f330aa34-7bc2-4b30-ab36-da0ceedbd011": {
+      "name": "ScoreAddEffect",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "f330aa34-7bc2-4b30-ab36-da0ceedbd011",
+      "parent": "d9ca3bb6-7b76-4370-8326-f6b8d45fec6e",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "fontRenderer"
+          ],
+          "scripts": {
+            "fontRenderer": {
+              "enabled": true,
+              "attributes": {
+                "text": "+2",
+                "maxTextLength": 256,
+                "fontAtlas": 5156983,
+                "fontJson": 5156982,
+                "x": 0,
+                "y": -280,
+                "depth": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 2400
+              }
+            }
+          }
+        }
+      }
+    },
+    "c649f91f-d6a9-4796-9826-4b3e8c000b07": {
+      "name": "ShadowAnimal",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "c649f91f-d6a9-4796-9826-4b3e8c000b07",
+      "parent": "3aa7f873-5477-4626-b2de-1711e6bbc785",
+      "children": [
+        "b8a138fe-e86a-45d9-a091-ef901d1d5bca"
+      ],
+      "position": [
+        0,
+        1,
+        -5
+      ],
+      "rotation": [
+        0,
+        150,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "model": {
+          "enabled": false,
+          "isStatic": false,
+          "type": "asset",
+          "asset": 5270962,
+          "materialAsset": null,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        },
+        "rigidbody": {
+          "enabled": false,
+          "type": "dynamic",
+          "mass": 1,
+          "linearDamping": 0,
+          "angularDamping": 0,
+          "linearFactor": [
+            1,
+            1,
+            1
+          ],
+          "angularFactor": [
+            1,
+            1,
+            1
+          ],
+          "friction": 0,
+          "restitution": 0
+        },
+        "script": {
+          "enabled": true,
+          "order": [
+            "shadowAnimal"
+          ],
+          "scripts": {
+            "shadowAnimal": {
+              "enabled": true,
+              "attributes": {
+                "initialVelocitySpeedX": 3,
+                "initialVelocitySpeedZ": 9,
+                "velocitySpeedX": 3,
+                "velocitySpeedZ": 9,
+                "maxVelocitySpeedX": 17,
+                "maxVelocitySpeedZ": 15,
+                "stage01MaxSpeed": 10,
+                "acceleration": 0.2,
+                "startAcceleration": 3,
+                "initialX": 0,
+                "initialY": 1,
+                "initialZ": 0,
+                "initialRX": 0,
+                "initialRY": 150,
+                "initialRZ": 0
+              }
+            }
+          }
+        },
+        "collision": {
+          "enabled": false,
+          "type": "box",
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "radius": 0.5,
+          "axis": 1,
+          "height": 2,
+          "asset": null
+        }
+      }
+    },
+    "6d2a8ebc-0cd2-46ac-9aea-f832f81e1a7a": {
+      "name": "ShadowTrigger",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "6d2a8ebc-0cd2-46ac-9aea-f832f81e1a7a",
+      "parent": "3aa7f873-5477-4626-b2de-1711e6bbc785",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "shadowTrigger"
+          ],
+          "scripts": {
+            "shadowTrigger": {
+              "enabled": true,
+              "attributes": {}
+            }
+          }
+        },
+        "collision": {
+          "enabled": true,
+          "type": "cylinder",
+          "halfExtents": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "radius": 0.5,
+          "axis": 1,
+          "height": 1,
+          "asset": null
+        }
+      }
+    },
+    "084d30e7-e37a-435a-823b-4e9f1c24e24d": {
+      "name": "ChallengeResult",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "084d30e7-e37a-435a-823b-4e9f1c24e24d",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5630407,
+                "pos": [
+                  0,
+                  -90
+                ],
+                "size": [
+                  163,
+                  140
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 1,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "b43d069d-ee20-48e3-a3c2-e43c641b2df5": {
+      "name": "RestartVS",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "b43d069d-ee20-48e3-a3c2-e43c641b2df5",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5629831,
+                "pos": [
+                  -76,
+                  -100
+                ],
+                "size": [
+                  144,
+                  144
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 4,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "8320e7b1-1f47-4848-bf7b-91cb3bb7ee07": {
+      "name": "Home",
+      "tags": [],
+      "enabled": false,
+      "resource_id": "8320e7b1-1f47-4848-bf7b-91cb3bb7ee07",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5630402,
+                "pos": [
+                  76,
+                  -100
+                ],
+                "size": [
+                  144,
+                  144
+                ],
+                "depth": 1,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 4,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "36125691-9a91-45ed-9b27-c1f22e084d5e": {
+      "name": "Tip",
+      "tags": [
+        "Tip"
+      ],
+      "enabled": false,
+      "resource_id": "36125691-9a91-45ed-9b27-c1f22e084d5e",
+      "parent": "23977268-465f-4ec6-92d2-fe43a3aace4c",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5659838,
+                "pos": [
+                  -110,
+                  110
+                ],
+                "size": [
+                  16,
+                  16
+                ],
+                "depth": 0,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "63a12781-ca11-4302-8e47-cd8ef00145aa": {
+      "name": "Tip",
+      "tags": [
+        "Tip"
+      ],
+      "enabled": false,
+      "resource_id": "63a12781-ca11-4302-8e47-cd8ef00145aa",
+      "parent": "d46c539b-99ec-49bc-b302-e1e298fd00ef",
+      "children": [],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {
+        "script": {
+          "enabled": true,
+          "order": [
+            "sprite"
+          ],
+          "scripts": {
+            "sprite": {
+              "enabled": true,
+              "attributes": {
+                "textureAsset": 5659838,
+                "pos": [
+                  -110,
+                  110
+                ],
+                "size": [
+                  16,
+                  16
+                ],
+                "depth": 0,
+                "uPercentage": 1,
+                "vPercentage": 1,
+                "anchor": 7,
+                "pivot": 4,
+                "tint": [
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "maxResHeight": 720
+              }
+            }
+          }
+        }
+      }
+    },
+    "3aa7f873-5477-4626-b2de-1711e6bbc785": {
+      "name": "Shadow",
+      "tags": [],
+      "enabled": true,
+      "resource_id": "3aa7f873-5477-4626-b2de-1711e6bbc785",
+      "parent": "cd08948c-8389-11e6-8a99-22000ac481df",
+      "children": [
+        "c649f91f-d6a9-4796-9826-4b3e8c000b07",
+        "6d2a8ebc-0cd2-46ac-9aea-f832f81e1a7a"
+      ],
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "components": {}
+    },
+    "b8a138fe-e86a-45d9-a091-ef901d1d5bca": {
+      "name": "ShadowHeadImg",
+      "tags": [
+        "ShadowHeadImg"
+      ],
+      "enabled": false,
+      "resource_id": "b8a138fe-e86a-45d9-a091-ef901d1d5bca",
+      "parent": "c649f91f-d6a9-4796-9826-4b3e8c000b07",
+      "children": [],
+      "position": [
+        -1.0937073824379695e-7,
+        3,
+        -7.854821433284087e-7
+      ],
+      "rotation": [
+        102,
+        150,
+        180
+      ],
+      "scale": [
+        2,
+        0.001,
+        2
+      ],
+      "components": {
+        "model": {
+          "enabled": false,
+          "isStatic": true,
+          "type": "cylinder",
+          "asset": null,
+          "materialAsset": 5680777,
+          "castShadows": false,
+          "castShadowsLightmap": false,
+          "receiveShadows": false,
+          "lightmapped": false,
+          "lightmapSizeMultiplier": 1
+        }
+      }
+    }
+  },
+  "id": 461621
+}
