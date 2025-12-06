@@ -343,8 +343,8 @@ before removing to make everything always center aligned*/
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
   background: white;
   border-radius: 18px;
   text-decoration: none;
