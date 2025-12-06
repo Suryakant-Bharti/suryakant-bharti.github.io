@@ -336,15 +336,16 @@ before removing to make everything always center aligned*/
   gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .app-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   background: white;
   border-radius: 18px;
   text-decoration: none;
@@ -363,7 +364,6 @@ before removing to make everything always center aligned*/
   height: 40px;
   object-fit: contain;
   border-radius: 12px;
-  padding: 5px;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   transition: all 0.4s ease;
 }
